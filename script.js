@@ -8,5 +8,7 @@ for (let i = 0; i < 16; i++) {
         const block = document.createElement('div')
         block.classList.add('block')
         stringBlock.appendChild(block)
+        block.addEventListener('mouseenter', () =>
+            block.style.backgroundColor = 'blue')
     }
 }
