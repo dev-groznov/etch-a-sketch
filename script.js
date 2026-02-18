@@ -8,8 +8,12 @@ function getNewGrid(numberOfCells) {
             block.classList.add('block')
             stringBlocks.appendChild(block)
             block.style.height = `${800 / numberOfCells}px`
-            block.addEventListener('mouseenter', () =>
-                block.style.backgroundColor = 'blue')
+            let countRepeatCall = -1
+            block.addEventListener('mouseenter', () => {
+                countRepeatCall++
+                let r = Math.floor(Math.random() * 255), g = Math.floor(Math.random() * 255), b = Math.floor(Math.random() * 255)
+                block.style.backgroundColor = `rgb(${r*(1-0.1*countRepeatCall)}, ${g*(1-0.1*countRepeatCall)}, ${b*(1-0.1*countRepeatCall)})`
+            })
         }
     }
 }
